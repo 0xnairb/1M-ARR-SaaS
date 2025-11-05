@@ -45,8 +45,18 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 2. Go to [vercel.com](https://vercel.com)
 3. Click "Import Project"
 4. Select your repo
-5. Add environment variables
+5. **Configure Environment Variables** in Vercel Dashboard:
+   - Go to Project Settings > Environment Variables
+   - Add each variable (key and value):
+     - `NEXT_PUBLIC_POSTHOG_KEY` = `phc_xxxxxxxxxxxxx`
+     - `NEXT_PUBLIC_POSTHOG_HOST` = `https://app.posthog.com`
+     - `CONVERTKIT_API_KEY` = `your_api_key`
+     - `CONVERTKIT_FORM_ID` = `your_form_id`
+   - Select environment: Production, Preview, Development (or all)
+   - Click "Save"
 6. Deploy
+
+**Important**: Environment variables are configured directly in Vercel's dashboard, NOT in `vercel.json`. The app reads from `process.env` automatically.
 
 ### Custom Domain
 
